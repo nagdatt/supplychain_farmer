@@ -17,6 +17,7 @@ import { FormControl } from '@mui/material';
 import { useState } from "react";
 import Snackbar from '@mui/material/Snackbar';
 import axios from "axios";
+import baseLink from "../ENV/axiosLink";
 
 const theme = createTheme();
 
@@ -36,14 +37,14 @@ export default function AddUser() {
     const phno=data.get("phno")
     const Role=role
     const obj={
-      "email":email,
-      "password":password,
-      "name":name,
-      "phoneNo":phno,
-      "role":"farmer",
-      "createdBy":"62fa061a130d5d44136176ad"
+      email:email,
+      password:password,
+      name:name,
+      phoneNo:phno,
+      role:"farmer",
+      createdBy:"62fa061a130d5d44136176ad"
   }
-  axios.post("/admin/adduser",obj).then((res)=>{
+  axios.post(baseLink+"admin/adduser",obj).then((res)=>{
     setOpenSnackbar(true);
   })
 

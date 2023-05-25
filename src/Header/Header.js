@@ -22,7 +22,7 @@ const pages = [
   ["Add Raws.", 0, "/"],
  
   ["My stocks", 0, "/myhistory"],
-  ["Help", 0, "/help"]
+  ["Help", 0, "/help"],
   // ["Track Transport", 0, "/TrackTransport"],
 ];
 // const settings = ["Profile","Transaction History", "Logout"];
@@ -152,7 +152,7 @@ const Header = () => {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
                   alt="Remy Sharp"
-                  {...stringAvatar("Raghu Deshpande")}
+                  {...stringAvatar(sessionStorage.getItem("user1"))}
                       />
               </IconButton>
             </Tooltip>
